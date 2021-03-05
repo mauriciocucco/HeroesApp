@@ -1,27 +1,37 @@
 # HeroesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Éste proyecto corresponde a la cuarta app que desarrollé a través del curso de `Angular: de cero a experto (edición 2021)` de Fernando Herrera en Udemy. Es una app muy sencilla que muestra información sobre distintos héroes de Marvel y DC, permite agregar nuevos héroes, editarlos y eliminarlos (CRUD). Posee también un buscador con un autocomplete y un sencillo login con un Guard para la sección principal.
 
-## Development server
+Se encuentra hecho con **Angular Material** (https://material.angular.io/), **JSON Server** (https://www.npmjs.com/package/json-server), el cual permite crear un servidor con la información precargada de los héroes en un JSON a modo de "base de datos", y **Angular CLI** (versión 11.0.4.), con un patrón de diseño **Lazyload**. Para su instalación:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install -g @angular/cli json-server
+```
 
-## Code scaffolding
+## Iniciar la aplicación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Primero se deben instalar las dependencias del proyecto con:
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Luego, con una consola distinta, posicionarse dentro de la carpeta "heroes-server" y escribir:
 
-## Running unit tests
+```bash
+json-server --watch db.json
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> Esta consola debe permanecer abierta para realizar las peticiones CRUD.
 
-## Running end-to-end tests
+Por último, para abrir la aplicación:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+ng serve -o
+```
 
-## Further help
+Abrirá la página en la siguiente URL: `http://localhost:4200/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Nota
+
+> La página se actualizará automáticamente al realizar cambios y guardar.
